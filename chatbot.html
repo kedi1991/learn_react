@@ -16,21 +16,34 @@
             function ChatBot(){
                 return (
                 <div>
-                    <input></input>
+                    <input placeholder ="send query" size="30"></input>
                     <button>Send</button>
                 </div>
             );
             }
-            //Call out component
+
+            //component to hold the chat message
+            function ChatMessage(){
+                return (
+                    <div>
+                        Hello Sir!
+                        <img src="./user.png" width="50"></img>
+                    </div>
+
+                );
+            }
+
+            //our grand component
             const div = (
                 <div>
-                    {ChatBot()}    
+                    <ChatBot />
+                    <ChatMessage />
                 </div>
             );
 
             //display the component
             const container = document.querySelector('.js-container');
-            ReactDOM.createRoot(container).render(ChatBot());
+            ReactDOM.createRoot(container).render(div);
         </script>
     </body>
 </html>
