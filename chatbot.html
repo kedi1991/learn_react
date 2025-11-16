@@ -23,10 +23,10 @@
             }
 
             //component to hold the chat message
-            function ChatMessage(){
+            function ChatMessage(props){
                 return (
                     <div>
-                        Hello Sir!
+                        {props.message}
                         <img src="./user.png" width="50"></img>
                     </div>
 
@@ -37,7 +37,7 @@
             const div = (
                 <div>
                     <ChatBot />
-                    <ChatMessage />
+                    <ChatMessage message="Okurut henry kedi" />
                 </div>
             );
 
