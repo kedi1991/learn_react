@@ -23,21 +23,27 @@
             }
 
             //component to hold the chat message
-            function ChatMessage(props){
-                return (
+            function ChatMessage({message, sender}){
+                return(
                     <div>
-                        {props.message}
-                        <img src="./user.png" width="50"></img>
+                        {sender === "robot" &&  <img src="./robot.png" width="50"></img>}
+                        {message}
+                        
+                        {sender === "user" &&  <img src="./user.png" width="50"></img>}
+                        {message}
                     </div>
-
-                );
+                )
             }
 
             //our grand component
             const div = (
                 <div>
                     <ChatBot />
-                    <ChatMessage message="Okurut henry kedi" />
+                    <ChatMessage message="Hello!" sender="user" />
+                    <ChatMessage message="Fine, How may i help you" sender="robot" />
+                    <ChatMessage message="I want to Learn AI" sender="user" />
+                    <ChatMessage message="Visit Udemy and find courses for that" sender="robot" />
+                    <ChatMessage message="Much appreciated, thank you!" sender="user" />
                 </div>
             );
 
