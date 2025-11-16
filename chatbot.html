@@ -13,7 +13,7 @@
 
         <script type="text/babel">
             //create a component
-            function ChatBot(){
+            function ChatQuery(){
                 return (
                 <div>
                     <input placeholder ="send query" size="30"></input>
@@ -36,20 +36,22 @@
             }
 
             //our grand component
-            const div = (
-                <div>
-                    <ChatBot />
-                    <ChatMessage message="Hello!" sender="user" />
-                    <ChatMessage message="Fine, How may i help you" sender="robot" />
-                    <ChatMessage message="I want to Learn AI" sender="user" />
-                    <ChatMessage message="Visit Udemy and find courses for that" sender="robot" />
-                    <ChatMessage message="Much appreciated, thank you!" sender="user" />
-                </div>
-            );
+            function App(){
+                return (
+                    <div>
+                        <ChatQuery />
+                        <ChatMessage message="Hello!" sender="user" />
+                        <ChatMessage message="Fine, How may i help you" sender="robot" />
+                        <ChatMessage message="I want to Learn AI" sender="user" />
+                        <ChatMessage message="Visit Udemy and find courses for that" sender="robot" />
+                        <ChatMessage message="Much appreciated, thank you!" sender="user" />
+                    </div>
+                )
+            }
 
             //display the component
             const container = document.querySelector('.js-container');
-            ReactDOM.createRoot(container).render(div);
+            ReactDOM.createRoot(container).render(<App />);
         </script>
     </body>
 </html>
