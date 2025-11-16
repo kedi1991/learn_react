@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat bot</title>
+</head>
+    <body>
+        <div class="js-container"></div> 
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+            //create a component
+            function ChatBot(){
+                return (
+                <div>
+                    <input></input>
+                    <button>Send</button>
+                </div>
+            );
+            }
+            //Call out component
+            const div = (
+                <div>
+                    {ChatBot()}    
+                </div>
+            );
+
+            //display the component
+            const container = document.querySelector('.js-container');
+            ReactDOM.createRoot(container).render(ChatBot());
+        </script>
+    </body>
+</html>
